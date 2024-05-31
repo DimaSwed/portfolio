@@ -1,12 +1,10 @@
-// import Image from "next/image";
-// import styles from "./page.module.css";
+import Navbar from '@/components/Navbar'
+import { Box } from '@mui/material'
 
 export default function Home() {
   return (
-    // <main className={styles.main}>
-    <>
-      <h1>PORTFOLIO</h1>
-    </>
-    // </main>
+    <Box component="main" bgcolor={'primary.main'} minHeight={'100vh'}>
+      <Navbar />
+    </Box>
   )
 }
