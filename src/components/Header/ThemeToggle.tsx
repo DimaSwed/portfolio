@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect } from 'react'
+import React, { FC, useEffect } from 'react'
 import { FormControlLabel, Switch } from '@mui/material'
 import { useAppDispatch, useAppSelector } from '@/store/hooks'
 import { setThemeReducer } from '@/store/slices/slice-theme'
@@ -8,7 +8,7 @@ interface IProps {
   sx?: object
 }
 
-export const ThemeToggle: React.FC<IProps> = ({ sx }) => {
+export const ThemeToggle: FC<IProps> = ({ sx }) => {
   const dispatch = useAppDispatch()
   const currentTheme = useAppSelector((state) => state.theme.currentTheme)
 
@@ -30,8 +30,9 @@ export const ThemeToggle: React.FC<IProps> = ({ sx }) => {
       control={
         <Switch
           name="theme"
-          inputProps={{ 'aria-label': 'controlled' }}
+          // inputProps={{ 'aria-label': 'controlled' }}
           checked={currentTheme === 'blueTheme'}
+          // defaultChecked
           color="default"
           onChange={toggleTheme}
         />
@@ -48,4 +49,3 @@ export const ThemeToggle: React.FC<IProps> = ({ sx }) => {
     />
   )
 }
-// Сделать компонент серверным используя куки

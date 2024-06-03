@@ -1,14 +1,8 @@
 import React, { FC } from 'react'
 import { Button } from '@mui/material'
+import { navItems } from '@/common/NavItems'
 
-const navItems = [
-  { label: 'Кейсы', link: '#cases' },
-  { label: 'Обо мне', link: '#about_me' },
-  { label: 'Цены', link: '#prices' },
-  { label: 'Контакты', link: '#contacts' }
-]
-
-const Navbar: FC = () => {
+export const Navbar: FC = () => {
   return (
     <>
       {navItems.map((item) => (
@@ -30,5 +24,3 @@ const Navbar: FC = () => {
     </>
   )
 }
-
-export default Navbar

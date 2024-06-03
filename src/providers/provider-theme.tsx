@@ -17,7 +17,6 @@ const ThemeWrapper: FC<ProviderThemeProps> = ({ children, theme }) => {
   const [selectedTheme, setSelectedTheme] = useState(theme)
 
   useEffect(() => {
-    console.log(currentTheme, selectedTheme, mount, theme)
     if (!mount) {
       setMount(true)
       return

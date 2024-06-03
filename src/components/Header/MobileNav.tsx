@@ -16,25 +16,15 @@ import CloseIcon from '@mui/icons-material/Close'
 import { ThemeToggle } from './ThemeToggle'
 import { useAppDispatch, useAppSelector } from '@/store/hooks'
 import { closeNavReducer } from '@/store/slices/slice-navigation'
+import { navItems } from '@/common/NavItems'
 
 interface IProps {
   window?: () => Window
 }
 
 const drawerWidth = 280
-const navItems = [
-  { label: 'Кейсы', link: '#cases' },
-  { label: 'Обо мне', link: '#about_me' },
-  { label: 'Цены', link: '#prices' },
-  { label: 'Контакты', link: '#contacts' }
-]
 
-export const MobileNav: FC<IProps> = (props) => {
-  const { window } = props
-  // const [mobileOpen, setMobileOpen] = useState<boolean>(false)
-  // const handleDrawerToggle = () => {
-  //   setMobileOpen((prevState) => !prevState)
-  // }
+export const MobileNav: FC<IProps> = ({ window }) => {
   const dispatch = useAppDispatch()
   const showNav = useAppSelector((state) => state.navigation.showNav)
 
@@ -57,6 +47,7 @@ export const MobileNav: FC<IProps> = (props) => {
             <ListItemButton
               href={item.link}
               sx={{ textAlign: 'center', '&:hover': { color: 'primary.main' } }}
+              onClick={closeNavHandler}
             >
               <ListItemText primary={item.label} />
             </ListItemButton>
@@ -100,7 +91,7 @@ export const MobileNav: FC<IProps> = (props) => {
           {drawer}
         </Drawer>
       </nav>
-      <Box component="main" sx={{ p: 3, border: '1px solid red' }}>
+      <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
       </Box>
     </>

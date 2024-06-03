@@ -1,11 +1,11 @@
 'use client'
-import React from 'react'
+import React, { FC } from 'react'
 import { IconButton } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import { useAppDispatch } from '@/store/hooks'
 import { openNavReducer } from '@/store/slices/slice-navigation'
 
-const BurgerButton = () => {
+export const BurgerButton: FC = () => {
   const dispatch = useAppDispatch()
   const showNavHandler = () => dispatch(openNavReducer())
   return (
@@ -22,5 +22,3 @@ const BurgerButton = () => {
     </>
   )
 }
-
-export default BurgerButton

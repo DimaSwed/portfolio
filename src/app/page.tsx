@@ -7,6 +7,7 @@ export default function Home() {
     <Box component="main" bgcolor={'primary.main'} minHeight={'100%'}>
       <Container maxWidth="xl">
         <Header />
+        {/* <Box sx={{ height: '2000px' }} /> */}
         <About />
       </Container>
     </Box>

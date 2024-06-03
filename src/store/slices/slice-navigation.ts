@@ -1,6 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = {
+interface NavigationState {
+  showNav: boolean
+}
+
+const initialState: NavigationState = {
   showNav: false
 }
 
