@@ -1,10 +1,14 @@
-import Navbar from '@/components/Navbar'
-import { Box } from '@mui/material'
+import { About } from '@/components/About'
+import { Header } from '@/components/Header/Header'
+import { Box, Container } from '@mui/material'
 
 export default function Home() {
   return (
-    <Box component="main" bgcolor={'primary.main'} minHeight={'100vh'}>
-      <Navbar />
+    <Box component="main" bgcolor={'primary.main'} minHeight={'100%'}>
+      <Container maxWidth="xl">
+        <Header />
+        <About />
+      </Container>
     </Box>
   )
 }

@@ -41,14 +41,41 @@ const greenTheme = createTheme({
   },
   palette: {
     primary: {
-      main: green[600]
+      main: '#232323'
     },
     secondary: {
       main: green[700]
     }
   },
   typography: {
-    fontFamily: manrope.style.fontFamily
+    fontFamily: manrope.style.fontFamily,
+    h1: {
+      fontSize: '110px',
+      '@media (max-width:1200px)': {
+        fontSize: '80px'
+      },
+      '@media (max-width:900px)': {
+        fontSize: '60px'
+      },
+      '@media (max-width:600px)': {
+        fontSize: '50px'
+      },
+      fontWeight: 400,
+      fontStyle: 'normal',
+      fontFamily: 'Manrope, sans-serif',
+      lineHeight: '130%',
+      textTransform: 'none'
+    },
+    h6: {
+      fontSize: '20px',
+      fontWeight: 400,
+      fontStyle: 'normal',
+      fontFamily: 'Manrope, sans-serif',
+      lineHeight: '130%',
+      textTransform: 'none',
+      letterSpacing: '0.2rem',
+      textDecoration: 'none'
+    }
   }
 })
 
@@ -71,7 +98,34 @@ const blueTheme = createTheme({
     }
   },
   typography: {
-    fontFamily: manrope.style.fontFamily
+    fontFamily: manrope.style.fontFamily,
+    h1: {
+      fontSize: '110px',
+      '@media (max-width:1200px)': {
+        fontSize: '80px'
+      },
+      '@media (max-width:900px)': {
+        fontSize: '60px'
+      },
+      '@media (max-width:600px)': {
+        fontSize: '50px'
+      },
+      fontWeight: 400,
+      fontStyle: 'normal',
+      fontFamily: 'Manrope, sans-serif',
+      lineHeight: '130%',
+      textTransform: 'none'
+    },
+    h6: {
+      fontSize: '20px',
+      fontWeight: 400,
+      fontStyle: 'normal',
+      fontFamily: 'Manrope, sans-serif',
+      lineHeight: '130%',
+      textTransform: 'none',
+      letterSpacing: '0.2rem',
+      textDecoration: 'none'
+    }
   }
 })
 
