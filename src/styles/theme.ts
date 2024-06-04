@@ -11,12 +11,6 @@ const manrope = Manrope({
   display: 'swap'
 })
 
-// const openSans = Open_Sans({
-//   weight: ['300', '400', '500', '700'],
-//   subsets: ['latin'],
-//   display: 'swap'
-// })
-
 // const inter = Inter({
 //   weight: ['300', '400', '500', '700'],
 //   subsets: ['latin'],
@@ -41,39 +35,68 @@ const greenTheme = createTheme({
   },
   palette: {
     primary: {
-      main: '#232323'
+      // main: '#232323'
+      main: green[700]
     },
     secondary: {
-      main: green[700]
+      main: green[800]
     }
   },
   typography: {
     fontFamily: manrope.style.fontFamily,
     h1: {
       fontSize: '110px',
+      transition: 'font-size 2s ease',
       '@media (max-width:1200px)': {
         fontSize: '80px'
       },
       '@media (max-width:900px)': {
-        fontSize: '60px'
+        fontSize: '65px'
       },
       '@media (max-width:600px)': {
+        fontWeight: 500,
         fontSize: '50px'
       },
       fontWeight: 400,
       fontStyle: 'normal',
-      fontFamily: 'Manrope, sans-serif',
+      lineHeight: '130%',
+      textTransform: 'none'
+    },
+    h2: {
+      fontSize: '100px',
+      transition: 'font-size 2s ease',
+      '@media (max-width:1200px)': {
+        fontSize: '70px'
+      },
+      '@media (max-width:900px)': {
+        fontSize: '50px'
+      },
+      '@media (max-width:600px)': {
+        fontSize: '35px'
+      },
+      fontWeight: 400,
+      fontStyle: 'normal',
       lineHeight: '130%',
       textTransform: 'none'
     },
     h6: {
+      fontFamily: 'Open Sans, sans-serif',
       fontSize: '20px',
+      transition: 'font-size 1s ease',
+      '@media (max-width:1200px)': {
+        fontSize: '18px'
+      },
+      '@media (max-width:900px)': {
+        fontSize: '15px'
+      },
+      '@media (max-width:600px)': {
+        fontSize: '14px'
+      },
       fontWeight: 400,
       fontStyle: 'normal',
-      fontFamily: 'Manrope, sans-serif',
       lineHeight: '130%',
       textTransform: 'none',
-      letterSpacing: '0.2rem',
+      // letterSpacing: '0.2rem',
       textDecoration: 'none'
     }
   }
@@ -101,29 +124,57 @@ const blueTheme = createTheme({
     fontFamily: manrope.style.fontFamily,
     h1: {
       fontSize: '110px',
+      transition: 'font-size 2s ease',
       '@media (max-width:1200px)': {
         fontSize: '80px'
       },
       '@media (max-width:900px)': {
-        fontSize: '60px'
+        fontSize: '65px'
       },
       '@media (max-width:600px)': {
+        fontWeight: 500,
         fontSize: '50px'
       },
       fontWeight: 400,
       fontStyle: 'normal',
-      fontFamily: 'Manrope, sans-serif',
+      lineHeight: '130%',
+      textTransform: 'none'
+    },
+    h2: {
+      fontSize: '100px',
+      transition: 'font-size 2s ease',
+      '@media (max-width:1200px)': {
+        fontSize: '70px'
+      },
+      '@media (max-width:900px)': {
+        fontSize: '50px'
+      },
+      '@media (max-width:600px)': {
+        fontSize: '35px'
+      },
+      fontWeight: 400,
+      fontStyle: 'normal',
       lineHeight: '130%',
       textTransform: 'none'
     },
     h6: {
+      fontFamily: 'Open Sans, sans-serif',
       fontSize: '20px',
+      transition: 'font-size 1s ease',
+      '@media (max-width:1200px)': {
+        fontSize: '18px'
+      },
+      '@media (max-width:900px)': {
+        fontSize: '15px'
+      },
+      '@media (max-width:600px)': {
+        fontSize: '14px'
+      },
       fontWeight: 400,
       fontStyle: 'normal',
-      fontFamily: 'Manrope, sans-serif',
       lineHeight: '130%',
       textTransform: 'none',
-      letterSpacing: '0.2rem',
+      // letterSpacing: '0.2rem',
       textDecoration: 'none'
     }
   }

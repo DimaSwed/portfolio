@@ -33,7 +33,8 @@ export const Header: FC = () => {
                   mr: 4,
                   fontWeight: 600,
                   color: '#eac566',
-                  fontSize: 30
+                  fontSize: 30,
+                  textTransform: 'uppercase'
                 }}
               >
                 Bulankin

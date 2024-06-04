@@ -1,10 +1,11 @@
-import React from 'react'
-import { Box, Container, Typography } from '@mui/material'
-import Image from 'next/image'
+import React, { FC } from 'react'
+
+import { Box, Container } from '@mui/material'
 import { HelloAnimateBox } from './HelloAnimateBox'
 import { Profession } from './Profession'
+import MyNameHeading from './MyNameHeading'
 
-export const About = () => {
+export const About: FC = () => {
   return (
     <Container maxWidth="lg" sx={{ minHeight: '398px' }}>
       {/* <Box display={'flex'} justifyContent={'center'} padding={5} sx={{ position: 'relative' }}>
@@ -70,16 +71,27 @@ export const About = () => {
       </Box> */}
 
       <a id="about_me">
-        <Box display={'flex'} justifyContent={'flex-end'} padding={5} sx={{ position: 'relative' }}>
+        <Box
+          display={'flex'}
+          // justifyContent={'flex-end'}
+          // padding={5}
+          sx={{
+            position: 'relative',
+            padding: { sm: 5, xs: 3 },
+            marginBottom: { lg: 0, md: 5, sm: 5, xs: 5 },
+            justifyContent: { md: 'flex-end', xs: 'start' }
+          }}
+        >
           <Box
             sx={{
               position: 'absolute',
-              left: '2%',
-              top: '50%',
+              left: { md: '2%', sm: '5%', xs: '5%' },
+              top: { md: '50%', sm: '10%', xs: '0' },
               zIndex: 3,
               width: '100%',
               maxWidth: '118px',
-              height: '46px'
+              height: '46px',
+              cursor: 'default'
             }}
           >
             <HelloAnimateBox />
@@ -88,44 +100,16 @@ export const About = () => {
           <Box
             display={'flex'}
             sx={{
+              cursor: 'default',
               position: 'relative',
               zIndex: 2,
-              // width: '100%',
               maxWidth: '979px',
               textAlign: 'center',
-              gap: 15
-              // border: '1px solid red'
+              gap: { md: 15, sm: 10, xs: 0 },
+              flexWrap: { sm: 'nowrap', xs: 'wrap' }
             }}
           >
-            <Typography variant="h1" sx={{ textAlign: 'center', color: '#ebe3ce', zIndex: 5 }}>
-              Dmitriy
-            </Typography>
-
-            <Typography variant="h1" sx={{ textAlign: 'center', color: '#ebe3ce', zIndex: 5 }}>
-              Bulankin
-            </Typography>
-            <Box
-              sx={{
-                width: '100%',
-                height: 'auto',
-                margin: 0,
-                display: 'block',
-                maxWidth: 206,
-                position: 'absolute',
-                top: '50%',
-                left: '46%',
-                transform: 'translate(-50%, -50%) rotate(6deg)',
-                zIndex: 1
-              }}
-            >
-              <Image
-                src="/about_img_fx.png"
-                alt="myself foto"
-                width={200}
-                height={200}
-                style={{ opacity: 0.7 }}
-              />
-            </Box>
+            <MyNameHeading />
           </Box>
         </Box>
 

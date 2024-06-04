@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { FC } from 'react'
 import { Box, Typography } from '@mui/material'
 import { keyframes } from '@emotion/react'
 
@@ -11,7 +11,7 @@ const rotateAnimation = keyframes`
   100% { transform: translateY(-50%) rotate(5deg) translateX(0); }
 `
 
-export const HelloAnimateBox = () => {
+export const HelloAnimateBox: FC = () => {
   return (
     <Box
       display={'flex'}

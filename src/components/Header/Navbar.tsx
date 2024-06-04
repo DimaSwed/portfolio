@@ -14,8 +14,8 @@ export const Navbar: FC = () => {
             '&:hover': { color: '#eac566' },
             padding: '0',
             textTransform: 'capitalize',
-            fontWeight: 600,
-            fontSize: 20
+            fontWeight: { md: 600, sm: 400 },
+            fontSize: { md: 20, sm: 14 }
           }}
         >
           {item.label}

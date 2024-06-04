@@ -10,7 +10,7 @@ interface ProviderThemeProps {
   theme?: string
 }
 
-const ThemeWrapper: FC<ProviderThemeProps> = ({ children, theme }) => {
+export const ThemeWrapper: FC<ProviderThemeProps> = ({ children, theme }) => {
   const currentTheme = useAppSelector((state) => state.theme.currentTheme)
 
   const [mount, setMount] = useState(false)
@@ -35,29 +35,3 @@ const ThemeWrapper: FC<ProviderThemeProps> = ({ children, theme }) => {
     </ThemeProvider>
   )
 }
-
-export default ThemeWrapper
-
-// import { FC, ReactNode } from 'react'
-// import { cookies } from 'next/headers'
-// import { ThemeProvider } from '@mui/material/styles'
-// import { CssBaseline } from '@mui/material'
-// import { greenTheme, blueTheme } from '@/styles/theme'
-
-// interface ProviderThemeProps {
-//   children: ReactNode
-// }
-
-// const ThemeWrapper: FC<ProviderThemeProps> = async ({ children }: ProviderThemeProps) => {
-//   const cookie = cookies()
-//   const theme = cookie.get('theme')
-
-//   return (
-//     <ThemeProvider theme={theme?.value === 'greenTheme' ? greenTheme : blueTheme}>
-//       <CssBaseline />
-//       {children}
-//     </ThemeProvider>
-//   )
-// }
-
-// export default ThemeWrapper

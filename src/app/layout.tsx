@@ -3,7 +3,7 @@ import * as React from 'react'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter'
 import StoreProvider from '@/providers/provider-store'
 import '@/styles/globals.sass'
-import ThemeWrapper from '@/providers/provider-theme'
+import { ThemeWrapper } from '@/providers/provider-theme'
 import { cookies } from 'next/headers'
 
 export const metadata: Metadata = {

@@ -33,7 +33,15 @@ export const MobileNav: FC<IProps> = ({ window }) => {
   const drawer = (
     <Box position={'relative'} height={'100vh'}>
       <Box display={'flex'} justifyContent={'space-between'} padding={1}>
-        <Typography variant="h6" sx={{ my: 1, paddingLeft: 1 }}>
+        <Typography
+          sx={{
+            my: 1,
+            paddingLeft: 1,
+            fontSize: '20px',
+            fontWeight: 700,
+            textTransform: 'uppercase'
+          }}
+        >
           Bulankin
         </Typography>
         <IconButton onClick={closeNavHandler}>
