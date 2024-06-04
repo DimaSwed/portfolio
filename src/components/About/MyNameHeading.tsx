@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { FC } from 'react'
 import Image from 'next/image'
 import { Box, Typography } from '@mui/material'
 
-const MyNameHeading = () => {
+export const MyNameHeading: FC = () => {
   return (
     <>
       <Typography variant="h1" sx={{ textAlign: 'center', color: '#ebe3ce', zIndex: 5 }}>
@@ -37,5 +37,3 @@ const MyNameHeading = () => {
     </>
   )
 }
-
-export default MyNameHeading

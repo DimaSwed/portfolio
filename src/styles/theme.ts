@@ -35,8 +35,8 @@ const greenTheme = createTheme({
   },
   palette: {
     primary: {
-      // main: '#232323'
-      main: green[700]
+      main: '#232323'
+      // main: green[700]
     },
     secondary: {
       main: green[800]
@@ -77,7 +77,21 @@ const greenTheme = createTheme({
       fontWeight: 400,
       fontStyle: 'normal',
       lineHeight: '130%',
+      letterSpacing: 0,
       textTransform: 'none'
+    },
+    h5: {
+      fontSize: '24px',
+      transition: 'font-size 1s ease',
+      '@media (max-width:1200px)': {
+        fontSize: '22px'
+      },
+      '@media (max-width:900px)': {
+        fontSize: '18px'
+      },
+      '@media (max-width:600px)': {
+        fontSize: '16px'
+      }
     },
     h6: {
       fontFamily: 'Open Sans, sans-serif',
@@ -156,6 +170,19 @@ const blueTheme = createTheme({
       fontStyle: 'normal',
       lineHeight: '130%',
       textTransform: 'none'
+    },
+    h5: {
+      fontSize: '24px',
+      transition: 'font-size 1s ease',
+      '@media (max-width:1200px)': {
+        fontSize: '22px'
+      },
+      '@media (max-width:900px)': {
+        fontSize: '18px'
+      },
+      '@media (max-width:600px)': {
+        fontSize: '16px'
+      }
     },
     h6: {
       fontFamily: 'Open Sans, sans-serif',

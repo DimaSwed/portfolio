@@ -1,13 +1,12 @@
 import React, { FC } from 'react'
-
 import { Box, Container } from '@mui/material'
 import { HelloAnimateBox } from './HelloAnimateBox'
 import { Profession } from './Profession'
-import MyNameHeading from './MyNameHeading'
+import { MyNameHeading } from './MyNameHeading'
 
 export const About: FC = () => {
   return (
-    <Container maxWidth="lg" sx={{ minHeight: '398px' }}>
+    <Container maxWidth="lg" sx={{ minHeight: '398px', mb: '150px' }}>
       {/* <Box display={'flex'} justifyContent={'center'} padding={5} sx={{ position: 'relative' }}>
         <Box
           sx={{
