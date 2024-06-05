@@ -1,4 +1,5 @@
 import { About } from '@/components/About'
+import { Advantages } from '@/components/Advantages'
 import { Friends } from '@/components/Friends/Friends'
 import { Header } from '@/components/Header/Header'
 import { Skills } from '@/components/Skills/Skills'
@@ -13,6 +14,7 @@ export default function Home() {
         <About />
         <Friends />
         <Skills />
+        <Advantages />
       </Container>
     </Box>
   )

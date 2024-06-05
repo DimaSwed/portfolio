@@ -80,6 +80,24 @@ const greenTheme = createTheme({
       letterSpacing: 0,
       textTransform: 'none'
     },
+    h3: {
+      fontSize: '80px',
+      transition: 'font-size 2s ease',
+      '@media (max-width:1200px)': {
+        fontSize: '60px'
+      },
+      '@media (max-width:900px)': {
+        fontSize: '32px'
+      },
+      '@media (max-width:600px)': {
+        fontSize: '25px'
+      },
+      fontWeight: 400,
+      fontStyle: 'normal',
+      lineHeight: '42px',
+      letterSpacing: 0,
+      textTransform: 'none'
+    },
     h4: {
       fontSize: '46px',
       transition: 'font-size 2s ease',
@@ -187,6 +205,24 @@ const blueTheme = createTheme({
       fontWeight: 400,
       fontStyle: 'normal',
       lineHeight: '130%',
+      letterSpacing: 0,
+      textTransform: 'none'
+    },
+    h3: {
+      fontSize: '80px',
+      transition: 'font-size 2s ease',
+      '@media (max-width:1200px)': {
+        fontSize: '60px'
+      },
+      '@media (max-width:900px)': {
+        fontSize: '32px'
+      },
+      '@media (max-width:600px)': {
+        fontSize: '25px'
+      },
+      fontWeight: 400,
+      fontStyle: 'normal',
+      lineHeight: '42px',
       letterSpacing: 0,
       textTransform: 'none'
     },
