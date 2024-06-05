@@ -22,7 +22,7 @@ export const Advantages: FC = () => {
             variant="h3"
             sx={{
               color: '#eac566',
-              textAlign: 'center',
+              // textAlign: 'center',
               fontFamily: 'Manrope, sans-serif',
               marginBottom: { lg: '48px', md: '44px', sm: '45px', xs: '44px' }
             }}
