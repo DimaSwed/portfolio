@@ -7,47 +7,63 @@ import { FotosWithFriends } from './FotosWithFriends'
 
 export const Friends: FC = () => {
   return (
-    <Box marginBottom={'150px'}>
+    <Box sx={{ mb: { lg: '150px', md: '136px', sm: '100px', xs: '100px' } }}>
       <Container maxWidth="lg">
         <Box
           sx={{
-            minHeight: '626px',
             display: 'flex',
             justifyContent: 'space-between',
+            flexWrap: { sm: 'nowrap', xs: 'wrap' },
             alignItems: 'center',
-            gap: '91px'
+            gap: '91px',
+            flexDirection: { xs: 'column', sm: 'row' }
           }}
         >
           <Box
             sx={{
               width: '100%',
               overflow: 'hidden',
-              maxWidth: '521px',
+              maxWidth: { sm: '521px', xs: '232px' },
               boxSizing: 'border-box',
               alignItems: 'flex-start',
               flexDirection: 'column',
-              justifyContent: 'flex-start'
-              // mr: '91px'
+              justifyContent: 'flex-start',
+              order: { xs: 2, sm: 1 },
+              transition: 'max-width 2s ease, max-height 2s ease'
             }}
           >
             <FotosWithFriends />
           </Box>
 
-          <Box sx={{ maxWidth: '588px' }}>
-            <Box sx={{ mb: '7px' }}>
+          <Box sx={{ maxWidth: '588px', order: { xs: 1, sm: 2 } }}>
+            <Box sx={{ mb: { sm: '7px', xs: '30px' } }}>
               <FriendsTitle />
             </Box>
 
             <Box
               sx={{
                 display: 'flex',
+                flexDirection: { sm: 'row', xs: 'column' },
                 justifyContent: 'center',
-                alignItems: 'flex-end',
-                gap: '23px'
+                alignItems: { sm: 'flex-end', xs: 'center' },
+                gap: { sm: '23px', xs: '0' }
               }}
             >
-              <VectorSvg />
-              <VectorAnimateBox />
+              <Box
+                sx={{
+                  order: { xs: 2, sm: 1 },
+                  ml: { sm: '0', xs: '-130px' },
+                  mb: { sm: '0', xs: '-60px' },
+                  transform: { sm: 'rotate(-5.41deg)', xs: 'rotate(0deg)' }
+                }}
+              >
+                <VectorSvg />
+              </Box>
+              <Box
+                sx={{ mr: { sm: '0', xs: '-100px' }, order: { xs: 1, sm: 2 }, maxWidth: '100%' }}
+              >
+                <VectorAnimateBox />
+              </Box>
             </Box>
           </Box>
         </Box>

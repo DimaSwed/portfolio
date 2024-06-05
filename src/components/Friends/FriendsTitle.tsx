@@ -6,6 +6,7 @@ export const FriendsTitle: FC = () => {
     <>
       <Typography
         variant="h5"
+        component={'p'}
         sx={{
           fontFamily: 'Manrope, sans-serif',
           color: '#eac566',
@@ -15,16 +16,15 @@ export const FriendsTitle: FC = () => {
         (I&apos;ts me)
       </Typography>
       <Typography
+        variant="h4"
         component="p"
         sx={{
           color: '#ebe3ce',
-          fontSize: '46px',
           fontFamily: 'Manrope, sans-serif',
-          fontWeight: 500,
           lineHeight: '60px'
         }}
       >
-        В трудные моменты я всегда поддерживал людей, все наши общие дела закончились успешно.
+        In difficult times, I always supported people. All cases I participated in are successful
       </Typography>
     </>
   )

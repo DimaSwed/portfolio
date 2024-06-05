@@ -13,7 +13,7 @@ import { MobileNav } from './MobileNav'
 
 export const Header: FC = () => {
   return (
-    <Box mb={'78px'} sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex', mb: { md: '78px', sm: '32px' } }}>
       <CssBaseline />
       <AppBar component="nav" sx={{ background: 'primary.main' }}>
         <Container maxWidth="lg">

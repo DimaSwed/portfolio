@@ -80,9 +80,27 @@ const greenTheme = createTheme({
       letterSpacing: 0,
       textTransform: 'none'
     },
+    h4: {
+      fontSize: '46px',
+      transition: 'font-size 2s ease',
+      '@media (max-width:1200px)': {
+        fontSize: '35px'
+      },
+      '@media (max-width:900px)': {
+        fontSize: '32px'
+      },
+      '@media (max-width:600px)': {
+        fontSize: '32px'
+      },
+      fontWeight: 500,
+      fontStyle: 'normal',
+      // lineHeight: '60px',
+      letterSpacing: 0,
+      textTransform: 'none'
+    },
     h5: {
       fontSize: '24px',
-      transition: 'font-size 1s ease',
+      transition: 'font-size 2s ease',
       '@media (max-width:1200px)': {
         fontSize: '22px'
       },
@@ -96,7 +114,7 @@ const greenTheme = createTheme({
     h6: {
       fontFamily: 'Open Sans, sans-serif',
       fontSize: '20px',
-      transition: 'font-size 1s ease',
+      transition: 'font-size 2s ease',
       '@media (max-width:1200px)': {
         fontSize: '18px'
       },
@@ -169,11 +187,30 @@ const blueTheme = createTheme({
       fontWeight: 400,
       fontStyle: 'normal',
       lineHeight: '130%',
+      letterSpacing: 0,
+      textTransform: 'none'
+    },
+    h4: {
+      fontSize: '46px',
+      transition: 'font-size 2s ease',
+      '@media (max-width:1200px)': {
+        fontSize: '35px'
+      },
+      '@media (max-width:900px)': {
+        fontSize: '32px'
+      },
+      '@media (max-width:600px)': {
+        fontSize: '32px'
+      },
+      fontWeight: 500,
+      fontStyle: 'normal',
+      // lineHeight: '60px',
+      letterSpacing: 0,
       textTransform: 'none'
     },
     h5: {
       fontSize: '24px',
-      transition: 'font-size 1s ease',
+      transition: 'font-size 2s ease',
       '@media (max-width:1200px)': {
         fontSize: '22px'
       },
@@ -187,7 +224,7 @@ const blueTheme = createTheme({
     h6: {
       fontFamily: 'Open Sans, sans-serif',
       fontSize: '20px',
-      transition: 'font-size 1s ease',
+      transition: 'font-size 2s ease',
       '@media (max-width:1200px)': {
         fontSize: '18px'
       },

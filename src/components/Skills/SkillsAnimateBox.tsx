@@ -10,8 +10,7 @@ const rotateAnimation = keyframes`
   75% { transform: translateY(-50%) rotate(5deg) translateX(-10px); }
   100% { transform: translateY(-50%) rotate(5deg) translateX(0); }
 `
-
-export const VectorAnimateBox: FC = () => {
+export const SkillsAnimateBox: FC = () => {
   return (
     <Box
       display={'flex'}
@@ -19,11 +18,11 @@ export const VectorAnimateBox: FC = () => {
       sx={{
         width: '100%',
         position: 'relative',
-        maxWidth: '250px',
+        maxWidth: '247px',
         transform: 'translateY(-50%) rotate(5deg)',
         boxSizing: 'border-box',
         alignItems: 'flex-start',
-        borderRadius: '25px 25px 4px 25px',
+        borderRadius: '25px 25px 25px 4px',
         justifyContent: 'flex-start',
         backgroundColor: '#e9e9eb',
         animation: `${rotateAnimation} 4s infinite`
@@ -41,7 +40,7 @@ export const VectorAnimateBox: FC = () => {
           textTransform: 'none'
         }}
       >
-        there are a lot of pictures
+        this is the perfect code
       </Typography>
     </Box>
   )

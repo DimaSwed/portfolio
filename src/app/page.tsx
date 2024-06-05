@@ -1,6 +1,7 @@
 import { About } from '@/components/About'
 import { Friends } from '@/components/Friends/Friends'
 import { Header } from '@/components/Header/Header'
+import { Skills } from '@/components/Skills/Skills'
 import { Box, Container } from '@mui/material'
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
         {/* <Box sx={{ height: '2000px' }} /> */}
         <About />
         <Friends />
+        <Skills />
       </Container>
     </Box>
   )
