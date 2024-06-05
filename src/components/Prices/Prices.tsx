@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
 import { Box, Container, Typography } from '@mui/material'
-import { ProjectItemList } from './ProjectItemList'
+import { PricesCardList } from './PricesCardList'
 
-export const Projects: FC = () => {
+export const Prices: FC = () => {
   return (
     <Box
       sx={{
@@ -10,11 +10,12 @@ export const Projects: FC = () => {
       }}
     >
       <Container maxWidth="lg">
-        <a id="cases">
+        <a id="prices">
           <Box
             display={'flex'}
             flexDirection={'column'}
             sx={{
+              cursor: 'default',
               marginBottom: { lg: 0, md: 5, sm: 5, xs: 5 }
             }}
           >
@@ -23,14 +24,14 @@ export const Projects: FC = () => {
               sx={{
                 color: '#eac566',
                 // textAlign: 'center',
-                fontFamily: 'Manrope, sans-serif',
                 cursor: 'default',
+                fontFamily: 'Manrope, sans-serif',
                 marginBottom: { lg: '48px', md: '44px', sm: '45px', xs: '44px' }
               }}
             >
-              ( Projects )
+              ( Prices )
             </Typography>
-            <ProjectItemList />
+            <PricesCardList />
           </Box>
         </a>
       </Container>

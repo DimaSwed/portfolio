@@ -35,8 +35,8 @@ const greenTheme = createTheme({
   },
   palette: {
     primary: {
-      main: '#232323'
-      // main: green[700]
+      // main: '#232323'
+      main: green[700]
     },
     secondary: {
       main: green[800]
@@ -127,7 +127,13 @@ const greenTheme = createTheme({
       },
       '@media (max-width:600px)': {
         fontSize: '16px'
-      }
+      },
+      fontWeight: 400,
+      fontStyle: 'normal',
+      lineHeight: '130%',
+      textTransform: 'none',
+      letterSpacing: 0,
+      textDecoration: 'none'
     },
     h6: {
       fontFamily: 'Open Sans, sans-serif',
@@ -255,7 +261,13 @@ const blueTheme = createTheme({
       },
       '@media (max-width:600px)': {
         fontSize: '16px'
-      }
+      },
+      fontWeight: 400,
+      fontStyle: 'normal',
+      lineHeight: '130%',
+      textTransform: 'none',
+      letterSpacing: 0,
+      textDecoration: 'none'
     },
     h6: {
       fontFamily: 'Open Sans, sans-serif',
