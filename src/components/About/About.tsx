@@ -1,18 +1,18 @@
 import React, { FC } from 'react'
-import { Box, Container } from '@mui/material'
+import { Box, Container, Link } from '@mui/material'
 import { HelloAnimateBox } from './HelloAnimateBox'
 import { Profession } from './Profession'
 import { MyNameHeading } from './MyNameHeading'
 
 export const About: FC = () => {
   return (
-    <Box
-      sx={{
-        marginBottom: { lg: '150px', md: '136px', sm: '100px', xs: '100px' }
-      }}
-    >
-      <Container maxWidth="lg">
-        <a id="about_me">
+    <Link id="about_me">
+      <Box
+        sx={{
+          marginBottom: { lg: '150px', md: '136px', sm: '100px', xs: '100px' }
+        }}
+      >
+        <Container maxWidth="lg">
           <Box
             display={'flex'}
             sx={{
@@ -54,8 +54,8 @@ export const About: FC = () => {
           </Box>
 
           <Profession />
-        </a>
-      </Container>
-    </Box>
+        </Container>
+      </Box>
+    </Link>
   )
 }

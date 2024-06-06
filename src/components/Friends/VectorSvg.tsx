@@ -35,7 +35,8 @@ export const VectorSvg: FC = () => {
             margin: '0',
             display: 'block',
             maxWidth: '261px',
-            maxHeight: '174px'
+            maxHeight: '174px',
+            objectFit: 'contain'
           }}
         />
       )}

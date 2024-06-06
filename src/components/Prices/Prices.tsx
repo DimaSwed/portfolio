@@ -1,17 +1,17 @@
 import React, { FC } from 'react'
-import { Box, Container } from '@mui/material'
+import { Box, Container, Link } from '@mui/material'
 import { PricesCardList } from './PricesCardList'
 import { PriceTitle } from './PriceTitle'
 
 export const Prices: FC = () => {
   return (
-    <Box
-      sx={{
-        marginBottom: { lg: '150px', md: '136px', sm: '100px', xs: '100px' }
-      }}
-    >
-      <Container maxWidth="lg">
-        <a id="prices">
+    <Link id="prices">
+      <Box
+        sx={{
+          marginBottom: { lg: '150px', md: '136px', sm: '100px', xs: '100px' }
+        }}
+      >
+        <Container maxWidth="lg">
           <Box
             display={'flex'}
             flexDirection={'column'}
@@ -23,8 +23,8 @@ export const Prices: FC = () => {
             <PriceTitle />
             <PricesCardList />
           </Box>
-        </a>
-      </Container>
-    </Box>
+        </Container>
+      </Box>
+    </Link>
   )
 }

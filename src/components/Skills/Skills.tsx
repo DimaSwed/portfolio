@@ -63,6 +63,7 @@ export const Skills: FC = () => {
           <Box
             sx={{
               width: '100%',
+              height: 'auto',
               overflow: 'hidden',
               maxWidth: { lg: '380px', md: '320px', xs: '214px' },
               boxSizing: 'border-box',

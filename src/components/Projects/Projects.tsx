@@ -1,17 +1,17 @@
 import React, { FC } from 'react'
-import { Box, Container } from '@mui/material'
+import { Box, Container, Link } from '@mui/material'
 import { ProjectItemList } from './ProjectItemList'
 import { ProjectsTitle } from './ProjectsTitle'
 
 export const Projects: FC = () => {
   return (
-    <Box
-      sx={{
-        marginBottom: { lg: '150px', md: '136px', sm: '100px', xs: '100px' }
-      }}
-    >
-      <Container maxWidth="lg">
-        <a id="cases">
+    <Link id="cases">
+      <Box
+        sx={{
+          marginBottom: { lg: '150px', md: '136px', sm: '100px', xs: '100px' }
+        }}
+      >
+        <Container maxWidth="lg">
           <Box
             display={'flex'}
             flexDirection={'column'}
@@ -22,8 +22,8 @@ export const Projects: FC = () => {
             <ProjectsTitle />
             <ProjectItemList />
           </Box>
-        </a>
-      </Container>
-    </Box>
+        </Container>
+      </Box>
+    </Link>
   )
 }

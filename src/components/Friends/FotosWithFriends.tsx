@@ -27,11 +27,12 @@ export const FotosWithFriends: FC = () => {
               width={350}
               height={400}
               style={{
-                width: '100%',
-                height: 'auto',
+                // width: '100%',
+                // height: 'auto',
                 margin: 0,
                 display: 'block',
-                maxWidth: '350px'
+                maxWidth: '350px',
+                objectFit: 'contain'
               }}
             />
           </SwiperSlide>

@@ -23,14 +23,13 @@ export const SkillsPictures: FC = () => {
           <Image
             src={img.link}
             alt={img.name}
-            layout="responsive"
             width={380}
             height={482}
-            objectFit="contain"
             style={{
               width: '100%',
               height: 'auto',
-              maxWidth: '380px'
+              maxWidth: '380px',
+              objectFit: 'contain'
             }}
           />
         </SwiperSlide>
