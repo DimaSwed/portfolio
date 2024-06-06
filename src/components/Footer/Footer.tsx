@@ -1,8 +1,10 @@
 import React, { FC } from 'react'
-import { Box, Container } from '@mui/material'
+import { Box, Container, Divider } from '@mui/material'
 
 import { FooterInfo } from './FooterInfo'
 import { FooterTitle } from './FooterTitle'
+import { ContactForm } from '../ConatctForm'
+
 export const Footer: FC = () => {
   return (
     <Box component="footer">
@@ -10,6 +12,8 @@ export const Footer: FC = () => {
         <a id="contacts">
           <Box display="flex" flexDirection="column" sx={{ cursor: 'default' }}>
             <FooterTitle />
+            <ContactForm />
+            <Divider sx={{ my: 2 }} />
             <FooterInfo />
           </Box>
         </a>

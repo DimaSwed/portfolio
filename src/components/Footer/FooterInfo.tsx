@@ -1,8 +1,10 @@
-import React, { FC } from 'react'
+'use client'
+import React, { FC, useEffect, useState } from 'react'
 import Grid from '@mui/material/Unstable_Grid2'
 import { Card, CardContent, Typography, Box } from '@mui/material'
+import Link from 'next/link'
 
-const titles = ['I am', 'Contact me', 'My current time is', 'created by']
+const titles = ['I am', 'Contact me', 'My current time is', 'Сreated by']
 const content = [
   { text: 'Bulankin Dmitriy', hideOnXs: true },
   { text: 'swed88@mail.ru', subtext: 'telegram: @dimaswed' },
@@ -24,6 +26,12 @@ const typographySx = {
 }
 
 export const FooterInfo: FC = () => {
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
   return (
     <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
       <Grid
@@ -83,8 +91,17 @@ export const FooterInfo: FC = () => {
                     <Typography sx={{ ...typographySx, marginBottom: index === 1 ? '16px' : 0 }}>
                       {content[index].text}
                     </Typography>
-                    {content[index].subtext && (
-                      <Typography sx={typographySx}>{content[index].subtext}</Typography>
+                    {isClient && content[index].subtext && (
+                      <Typography sx={typographySx}>
+                        <Link
+                          href={`https://t.me/dimaswed`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ color: '#ebe3ce', textDecoration: 'none' }}
+                        >
+                          telegram: @dimaswed
+                        </Link>
+                      </Typography>
                     )}
                   </>
                 )}

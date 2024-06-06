@@ -11,8 +11,8 @@ export const FooterTitle: FC = () => {
       sx={{
         display: 'flex',
         justifyContent: 'space-between',
-        alignItems: 'center',
-        marginBottom: { lg: '48px', md: '44px', sm: '45px', xs: '40px' }
+        alignItems: 'center'
+        // marginBottom: { lg: '48px', md: '44px', sm: '45px', xs: '40px' }
       }}
     >
       <Typography
