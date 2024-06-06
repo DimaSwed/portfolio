@@ -1,5 +1,6 @@
 import { About } from '@/components/About'
 import { Advantages } from '@/components/Advantages'
+import { Footer } from '@/components/Footer/Footer'
 import { Friends } from '@/components/Friends/Friends'
 import { Header } from '@/components/Header/Header'
 import { Prices } from '@/components/Prices'
@@ -20,6 +21,7 @@ export default function Home() {
         <Projects />
         <Prices />
         <Team />
+        <Footer />
       </Container>
     </Box>
   )

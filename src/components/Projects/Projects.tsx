@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
-import { Box, Container, Typography } from '@mui/material'
+import { Box, Container } from '@mui/material'
 import { ProjectItemList } from './ProjectItemList'
+import { ProjectsTitle } from './ProjectsTitle'
 
 export const Projects: FC = () => {
   return (
@@ -18,18 +19,7 @@ export const Projects: FC = () => {
               marginBottom: { lg: 0, md: 5, sm: 5, xs: 5 }
             }}
           >
-            <Typography
-              variant="h3"
-              sx={{
-                color: '#eac566',
-                // textAlign: 'center',
-                fontFamily: 'Manrope, sans-serif',
-                cursor: 'default',
-                marginBottom: { lg: '48px', md: '44px', sm: '45px', xs: '44px' }
-              }}
-            >
-              ( Projects )
-            </Typography>
+            <ProjectsTitle />
             <ProjectItemList />
           </Box>
         </a>

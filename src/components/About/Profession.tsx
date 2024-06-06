@@ -2,6 +2,7 @@
 
 import React, { FC, useState, useEffect } from 'react'
 import { Box, Typography } from '@mui/material'
+import { useTheme } from '@mui/material/styles'
 
 const textOne = {
   header: 'frontend dev',
@@ -16,6 +17,8 @@ const textTwo = {
 }
 
 export const Profession: FC = () => {
+  const theme = useTheme()
+
   const [isTextOne, setIsTextOne] = useState(true)
   const [showDescription, setShowDescription] = useState(false)
   const [showBorder, setShowBorder] = useState(true)
@@ -49,7 +52,7 @@ export const Profession: FC = () => {
         <Typography
           variant="h2"
           sx={{
-            color: '#EAC566',
+            color: theme.palette.secondary.main,
             width: '13.5ch',
             animation: 'typing 2.5s steps(22), blink .5s step-end infinite alternate',
             whiteSpace: 'nowrap',

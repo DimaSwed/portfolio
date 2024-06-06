@@ -4,12 +4,12 @@ import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import CssBaseline from '@mui/material/CssBaseline'
 import Toolbar from '@mui/material/Toolbar'
-import Typography from '@mui/material/Typography'
 import { Container } from '@mui/material'
 import { ThemeToggle } from './ThemeToggle'
 import { Navbar } from './Navbar'
 import { BurgerButton } from './BurgerButton'
 import { MobileNav } from './MobileNav'
+import { HeaderTitle } from './HeaderTitle'
 
 export const Header: FC = () => {
   return (
@@ -26,19 +26,7 @@ export const Header: FC = () => {
               gap={1}
               sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' } }}
             >
-              <Typography
-                variant="h6"
-                component="span"
-                sx={{
-                  mr: 4,
-                  fontWeight: 600,
-                  color: '#eac566',
-                  fontSize: 30,
-                  textTransform: 'uppercase'
-                }}
-              >
-                Bulankin
-              </Typography>
+              <HeaderTitle />
             </Box>
 
             <ThemeToggle

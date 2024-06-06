@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
-import { Box, Container, Typography } from '@mui/material'
-
+import { Box, Container } from '@mui/material'
 import { AdvantageCardList } from './AdvantageCardList'
+import { AdvantagesTitle } from './AdvantagesTitle'
 
 export const Advantages: FC = () => {
   return (
@@ -18,17 +18,7 @@ export const Advantages: FC = () => {
             marginBottom: { lg: 0, md: 5, sm: 5, xs: 5 }
           }}
         >
-          <Typography
-            variant="h3"
-            sx={{
-              color: '#eac566',
-              // textAlign: 'center',
-              fontFamily: 'Manrope, sans-serif',
-              marginBottom: { lg: '48px', md: '44px', sm: '45px', xs: '44px' }
-            }}
-          >
-            ( My four advantages )
-          </Typography>
+          <AdvantagesTitle />
 
           <AdvantageCardList />
         </Box>

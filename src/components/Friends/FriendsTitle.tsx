@@ -1,7 +1,11 @@
+'use client'
 import React, { FC } from 'react'
 import { Typography } from '@mui/material'
+import { useTheme } from '@mui/material/styles'
 
 export const FriendsTitle: FC = () => {
+  const theme = useTheme()
+
   return (
     <>
       <Typography
@@ -9,7 +13,7 @@ export const FriendsTitle: FC = () => {
         component={'p'}
         sx={{
           fontFamily: 'Manrope, sans-serif',
-          color: '#eac566',
+          color: theme.palette.secondary.main,
           mb: '24px'
         }}
       >
