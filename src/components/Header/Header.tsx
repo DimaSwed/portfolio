@@ -15,7 +15,7 @@ export const Header: FC = () => {
   return (
     <Box sx={{ display: 'flex', mb: { md: '78px', sm: '32px' } }}>
       <CssBaseline />
-      <AppBar component="nav" sx={{ background: 'primary.main' }}>
+      <AppBar component="nav" sx={{ backgroundColor: 'primary.main', backgroundImage: 'none' }}>
         <Container maxWidth="lg">
           <Toolbar>
             <BurgerButton />
@@ -34,6 +34,7 @@ export const Header: FC = () => {
                 display: 'block',
                 position: 'absolute',
                 left: '35%'
+                // color: 'white'
               }}
             />
 

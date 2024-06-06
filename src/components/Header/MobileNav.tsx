@@ -13,7 +13,7 @@ import {
   Toolbar
 } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
-import { ThemeToggle } from './ThemeToggle'
+// import { ThemeToggle } from './ThemeToggle'
 import { useAppDispatch, useAppSelector } from '@/store/hooks'
 import { closeNavReducer } from '@/store/slices/slice-navigation'
 import { navItems } from '@/common/NavItems'
@@ -54,7 +54,7 @@ export const MobileNav: FC<IProps> = ({ window }) => {
           <ListItem key={item.label} disablePadding>
             <ListItemButton
               href={item.link}
-              sx={{ textAlign: 'center', '&:hover': { color: 'primary.main' } }}
+              sx={{ textAlign: 'center', '&:hover': { color: 'secondary.main' } }}
               onClick={closeNavHandler}
             >
               <ListItemText primary={item.label} />
@@ -63,7 +63,7 @@ export const MobileNav: FC<IProps> = ({ window }) => {
         ))}
       </List>
 
-      <ThemeToggle
+      {/* <ThemeToggle
         sx={{
           position: 'absolute',
           left: 0,
@@ -74,7 +74,7 @@ export const MobileNav: FC<IProps> = ({ window }) => {
           display: 'flex',
           justifyContent: 'center'
         }}
-      />
+      /> */}
     </Box>
   )
 

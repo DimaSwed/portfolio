@@ -3,7 +3,7 @@ import { FC, ReactNode, useEffect, useState } from 'react'
 import { useAppSelector } from '@/store/hooks'
 import { ThemeProvider } from '@emotion/react'
 import { CssBaseline } from '@mui/material'
-import { greenTheme, blueTheme } from '@/styles/theme'
+import { darkTheme, blueTheme } from '@/styles/theme'
 
 interface ProviderThemeProps {
   children: ReactNode
@@ -26,7 +26,7 @@ export const ThemeWrapper: FC<ProviderThemeProps> = ({ children, theme }) => {
     }
   }, [currentTheme, selectedTheme, mount, theme])
 
-  const newSelectedTheme = selectedTheme === 'greenTheme' ? greenTheme : blueTheme
+  const newSelectedTheme = selectedTheme === 'darkTheme' ? darkTheme : blueTheme
 
   return (
     <ThemeProvider theme={newSelectedTheme}>

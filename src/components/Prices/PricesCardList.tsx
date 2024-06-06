@@ -49,7 +49,7 @@ export const PricesCardList: FC = () => {
                     {item.price}
                   </Typography>
                 </Box>
-                <Divider sx={{ mb: 1 }} />
+                <Divider sx={{ mb: 1, backgroundColor: 'white' }} />
                 <Typography
                   sx={{
                     color: '#ebe3ce',

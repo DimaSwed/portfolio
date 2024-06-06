@@ -11,11 +11,10 @@ export const BurgerButton: FC = () => {
   return (
     <>
       <IconButton
-        color="inherit"
         aria-label="open drawer"
         edge="start"
         onClick={showNavHandler}
-        sx={{ mr: 2, display: { sm: 'none' } }}
+        sx={{ display: { sm: 'none' } }}
       >
         <MenuIcon sx={{ color: 'white' }} />
       </IconButton>

@@ -7,14 +7,15 @@ export const AdvantagesTitle: FC = () => {
   const theme = useTheme()
   return (
     <Typography
-      variant="h4"
+      variant="h3"
       sx={{
         color: theme.palette.secondary.main,
+        fontFamily: 'Manrope, sans-serif',
         cursor: 'default',
-        fontFamily: 'Manrope, sans-serif'
+        marginBottom: { lg: '48px', md: '44px', sm: '45px', xs: '44px' }
       }}
     >
-      ( Leave a request or write to me to start )
+      ( My four advantages )
     </Typography>
   )
 }

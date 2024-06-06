@@ -5,7 +5,7 @@ interface ThemeState {
 }
 
 const initialState: ThemeState = {
-  currentTheme: 'greenTheme'
+  currentTheme: ''
 }
 
 const themeSlice = createSlice({

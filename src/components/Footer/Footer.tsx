@@ -13,7 +13,7 @@ export const Footer: FC = () => {
           <Box display="flex" flexDirection="column" sx={{ cursor: 'default' }}>
             <FooterTitle />
             <ContactForm />
-            <Divider sx={{ my: 2 }} />
+            <Divider sx={{ my: 2, backgroundColor: 'white' }} />
             <FooterInfo />
           </Box>
         </a>
