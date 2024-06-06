@@ -35,8 +35,8 @@ const greenTheme = createTheme({
   },
   palette: {
     primary: {
-      // main: '#232323'
-      main: green[700]
+      main: '#232323'
+      // main: green[700]
     },
     secondary: {
       main: green[800]

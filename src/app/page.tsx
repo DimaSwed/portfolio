@@ -5,6 +5,7 @@ import { Header } from '@/components/Header/Header'
 import { Prices } from '@/components/Prices'
 import { Projects } from '@/components/Projects'
 import { Skills } from '@/components/Skills/Skills'
+import { Team } from '@/components/Team'
 import { Box, Container } from '@mui/material'
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
         <Advantages />
         <Projects />
         <Prices />
+        <Team />
       </Container>
     </Box>
   )
