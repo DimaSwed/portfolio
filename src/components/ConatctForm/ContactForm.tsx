@@ -1,6 +1,15 @@
 'use client'
 import React, { FC, useState } from 'react'
-import { Box, Button, Grid, TextField, Tooltip, Fade } from '@mui/material'
+import {
+  Box,
+  Button,
+  Grid,
+  TextField,
+  Tooltip,
+  Fade,
+  CircularProgress,
+  Typography
+} from '@mui/material'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { useFormik, FormikHelpers } from 'formik'
 import * as yup from 'yup'
@@ -47,6 +56,8 @@ const validationSchema = yup.object({
 export const ContactForm: FC = () => {
   const [captchaValue, setCaptchaValue] = useState<string | null>(null)
   const [showCaptcha, setShowCaptcha] = useState<boolean>(false)
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(false)
 
   const formik = useFormik<FormValues>({
     initialValues: {
@@ -67,6 +78,7 @@ export const ContactForm: FC = () => {
       }
 
       try {
+        setIsSubmitting(true)
         const response = await fetch('/api/sendEmail', {
           method: 'POST',
           headers: {
@@ -80,13 +92,18 @@ export const ContactForm: FC = () => {
           resetForm()
           setShowCaptcha(false)
           setCaptchaValue(null)
+          setIsSubmitted(true)
         } else {
           console.error('Error:', result.error)
         }
       } catch (error) {
         console.error('Error:', error)
       } finally {
+        setIsSubmitting(false)
         setSubmitting(false)
+        setTimeout(() => {
+          setIsSubmitted(false)
+        }, 3000) // Remove the message after 3 seconds
       }
     }
   })
@@ -125,9 +142,94 @@ export const ContactForm: FC = () => {
         display: 'flex',
         justifyContent: 'center',
         padding: '2rem',
-        marginBottom: { lg: '48px', md: '44px', sm: '45px', xs: '40px' }
+        marginBottom: { lg: '48px', md: '44px', sm: '45px', xs: '40px' },
+        position: 'relative'
       }}
     >
+      {isSubmitting && (
+        <Box
+          sx={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            zIndex: 1000,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}
+        >
+          <Box
+            sx={{
+              width: '100%',
+              maxWidth: '300px',
+              height: 200,
+              backgroundColor: 'secondary.main',
+              opacity: 0.7,
+              borderRadius: '10px',
+              boxShadow: 3,
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              flexDirection: 'column',
+              padding: '1rem'
+            }}
+          >
+            <CircularProgress />
+            <Typography
+              variant="h6"
+              sx={{
+                marginTop: '1rem',
+                color: 'initial'
+              }}
+            >
+              Sending...
+            </Typography>
+          </Box>
+        </Box>
+      )}
+      {isSubmitted && (
+        <Box
+          sx={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            zIndex: 1000,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}
+        >
+          <Box
+            sx={{
+              width: '100%',
+              maxWidth: '300px',
+              height: 200,
+              backgroundColor: 'secondary.main',
+              opacity: 0.7,
+              borderRadius: '10px',
+              boxShadow: 3,
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              flexDirection: 'column',
+              padding: '1rem'
+            }}
+          >
+            <Typography
+              variant="h6"
+              sx={{
+                color: 'initial'
+              }}
+            >
+              Form Submitted Successfully!
+            </Typography>
+          </Box>
+        </Box>
+      )}
       <Grid container spacing={3} sx={{ maxWidth: 600 }}>
         <Grid item xs={12}>
           <TextField
