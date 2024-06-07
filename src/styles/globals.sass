@@ -1,5 +1,7 @@
 /* Reset */
-*
+*,
+*::before,
+*::after
   box-sizing: border-box
 
 html,
@@ -114,10 +116,10 @@ blockquote,
 q
   quotes: none
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after
+blockquote::before,
+blockquote::after,
+q::before,
+q::after
   content: ""
   content: none
 
@@ -143,6 +145,11 @@ a:hover
 a,
 :link,
 :visited
+  text-decoration: none
+
+/* Disable text underline on selection */
+::selection
+  background: rgba(0, 0, 0, 0.1)
   text-decoration: none
 
 /* Buttons and Selects */

@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import Image from 'next/image'
-import { Box, Typography } from '@mui/material'
+import { Box, Link, Typography } from '@mui/material'
 
 export const MyNameHeading: FC = () => {
   return (
@@ -12,6 +12,7 @@ export const MyNameHeading: FC = () => {
       <Typography variant="h1" sx={{ textAlign: 'center', color: '#ebe3ce', zIndex: 5 }}>
         Bulankin
       </Typography>
+
       <Box
         sx={{
           width: '100%',
@@ -26,13 +27,15 @@ export const MyNameHeading: FC = () => {
           zIndex: 1
         }}
       >
-        <Image
-          src="/about_img_fx.png"
-          alt="myself foto"
-          width={200}
-          height={200}
-          style={{ opacity: 0.7 }}
-        />
+        <Link id="about_me">
+          <Image
+            src="/about_img_fx.png"
+            alt="myself foto"
+            width={200}
+            height={200}
+            style={{ opacity: 0.7 }}
+          />
+        </Link>
       </Box>
     </>
   )
