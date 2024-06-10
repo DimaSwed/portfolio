@@ -1,6 +1,7 @@
 {
-	"launch": {
-		"configurations": [],
-		"compounds": []
-	}
+  "launch": {
+    "configurations": [],
+    "compounds": []
+  },
+  "CodeGPT.apiKey": "CodeGPT Plus Beta"
 }

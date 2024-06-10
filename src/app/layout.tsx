@@ -8,7 +8,23 @@ import { cookies } from 'next/headers'
 
 export const metadata: Metadata = {
   title: 'Portfolio | Web Page',
-  description: 'Bulankin Dmitriy - Portfolio'
+  description: 'Bulankin Dmitriy - Portfolio',
+  metadataBase: new URL('https://portfolio-blush-six-55.vercel.app'),
+  keywords: [
+    'portfolio',
+    'портфолио',
+    'web developer',
+    'frontend',
+    'фронтенд',
+    'frontend developer',
+    'фронтенд разработчик',
+    'сделать сайт',
+    'разработка сайта'
+  ],
+  openGraph: {
+    description: 'Разработка качественных веб приложений',
+    images: []
+  }
 }
 
 export default function RootLayout({
@@ -20,7 +36,7 @@ export default function RootLayout({
   const theme = cookie.get('theme')
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
         <StoreProvider>
           <AppRouterCacheProvider>

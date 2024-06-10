@@ -1,4 +1,5 @@
 'use client'
+
 import React, { FC, useState } from 'react'
 import {
   Box,
@@ -103,7 +104,7 @@ export const ContactForm: FC = () => {
         setSubmitting(false)
         setTimeout(() => {
           setIsSubmitted(false)
-        }, 3000) // Remove the message after 3 seconds
+        }, 3000)
       }
     }
   })
