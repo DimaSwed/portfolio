@@ -1,9 +1,9 @@
 import React, { FC } from 'react'
 import { Box, Container, Divider, Link } from '@mui/material'
-
 import { FooterInfo } from './FooterInfo'
 import { FooterTitle } from './FooterTitle'
 import { ContactForm } from '../ConatctForm'
+import { CommentsCommon } from '../CommentsForm/Comment'
 
 export const Footer: FC = () => {
   return (
@@ -12,8 +12,9 @@ export const Footer: FC = () => {
         <Box display="flex" flexDirection="column" sx={{ cursor: 'default' }}>
           <FooterTitle />
           <ContactForm />
-          <Link id="contacts">
-            <Divider sx={{ my: 2, backgroundColor: 'white' }} />
+          <CommentsCommon />
+          <Link id="contacts" style={{ cursor: 'default' }}>
+            <Divider sx={{ my: 10, backgroundColor: 'white' }} />
           </Link>
           <FooterInfo />
         </Box>

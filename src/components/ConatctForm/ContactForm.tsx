@@ -11,6 +11,7 @@ import {
   CircularProgress,
   Typography
 } from '@mui/material'
+/* eslint-disable-next-line import/no-named-as-default */
 import ReCAPTCHA from 'react-google-recaptcha'
 import { useFormik, FormikHelpers } from 'formik'
 import * as yup from 'yup'
@@ -143,7 +144,8 @@ export const ContactForm: FC = () => {
         display: 'flex',
         justifyContent: 'center',
         padding: '2rem',
-        marginBottom: { lg: '48px', md: '44px', sm: '45px', xs: '40px' },
+        // marginBottom: { lg: '48px', md: '44px', sm: '45px', xs: '40px' },
+        marginBottom: { lg: '150px', md: '136px', sm: '100px', xs: '100px' },
         position: 'relative'
       }}
     >
@@ -249,10 +251,10 @@ export const ContactForm: FC = () => {
         <Grid item xs={12}>
           <TextField
             fullWidth
-            label="Email or Phone Number"
-            variant="outlined"
             id="contact"
             name="contact"
+            label="Email or Phone Number"
+            variant="outlined"
             value={formik.values.contact}
             onChange={formik.handleChange}
             error={formik.touched.contact && Boolean(formik.errors.contact)}
@@ -263,10 +265,10 @@ export const ContactForm: FC = () => {
         <Grid item xs={12}>
           <TextField
             fullWidth
-            label="Subject"
-            variant="outlined"
             id="subject"
             name="subject"
+            label="Subject"
+            variant="outlined"
             value={formik.values.subject}
             onChange={formik.handleChange}
             error={formik.touched.subject && Boolean(formik.errors.subject)}
@@ -276,11 +278,11 @@ export const ContactForm: FC = () => {
         </Grid>
         <Grid item xs={12}>
           <TextField
+            fullWidth
             id="message"
             name="message"
-            placeholder="Write your message"
-            fullWidth
             label="Message"
+            placeholder="Write your message"
             variant="outlined"
             multiline
             rows={4}
@@ -293,7 +295,13 @@ export const ContactForm: FC = () => {
         </Grid>
         {showCaptcha && (
           <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'center', padding: 0 }}>
-            <ReCAPTCHA sitekey={API_KEY} onChange={handleCaptchaChange} />
+            <ReCAPTCHA
+              sitekey={API_KEY}
+              hl="ru"
+              theme="light" // или "dark"
+              size="normal"
+              onChange={handleCaptchaChange}
+            />
           </Grid>
         )}
         <Grid item xs={12}>
