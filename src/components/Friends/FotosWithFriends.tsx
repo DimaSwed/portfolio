@@ -26,6 +26,7 @@ export const FotosWithFriends: FC = () => {
               alt={foto.name}
               width={350}
               height={400}
+              loading="lazy"
               style={{
                 // width: '100%',
                 // height: 'auto',

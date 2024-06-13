@@ -3,7 +3,7 @@ import { Box, Container, Link } from '@mui/material'
 import { ProjectItemList } from './ProjectItemList'
 import { ProjectsTitle } from './ProjectsTitle'
 
-export const Projects: FC = () => {
+const Projects: FC = () => {
   return (
     <Link id="cases">
       <Box
@@ -27,3 +27,5 @@ export const Projects: FC = () => {
     </Link>
   )
 }
+
+export default Projects

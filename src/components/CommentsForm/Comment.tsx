@@ -5,7 +5,7 @@ import { prisma } from '@/prisma'
 import { CommentForm } from './CommentForm'
 import { CommentList } from './CommentList'
 
-export const CommentsCommon: FC = async () => {
+const CommentsCommon: FC = async () => {
   const comments = await prisma.comment.findMany({
     orderBy: { createdAt: 'desc' }
   })
@@ -20,3 +20,5 @@ export const CommentsCommon: FC = async () => {
     </Box>
   )
 }
+
+export default CommentsCommon

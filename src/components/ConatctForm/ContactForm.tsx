@@ -55,7 +55,7 @@ const validationSchema = yup.object({
   message: yup.string().min(20, 'Must be 20 characters or more').required('Message is required')
 })
 
-export const ContactForm: FC = () => {
+const ContactForm: FC = () => {
   const [captchaValue, setCaptchaValue] = useState<string | null>(null)
   const [showCaptcha, setShowCaptcha] = useState<boolean>(false)
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
@@ -330,6 +330,8 @@ export const ContactForm: FC = () => {
     </Box>
   )
 }
+
+export default ContactForm
 
 // ВАРИАНТ БЕЗ ОТПРАВКИ ФОРМЫ (ВЫВОД ДАННЫХ В КОНСОЛЬ)
 

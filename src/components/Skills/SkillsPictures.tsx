@@ -25,6 +25,7 @@ export const SkillsPictures: FC = () => {
             alt={img.name}
             width={380}
             height={482}
+            loading="lazy"
             style={{
               width: '100%',
               height: 'auto',

@@ -3,7 +3,7 @@ import { Box, Container } from '@mui/material'
 import { AdvantageCardList } from './AdvantageCardList'
 import { AdvantagesTitle } from './AdvantagesTitle'
 
-export const Advantages: FC = () => {
+const Advantages: FC = () => {
   return (
     <Box
       sx={{
@@ -26,3 +26,5 @@ export const Advantages: FC = () => {
     </Box>
   )
 }
+
+export default Advantages

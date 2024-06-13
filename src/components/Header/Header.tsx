@@ -11,7 +11,7 @@ import { BurgerButton } from './BurgerButton'
 import { MobileNav } from './MobileNav'
 import { HeaderTitle } from './HeaderTitle'
 
-export const Header: FC = () => {
+const Header: FC = () => {
   return (
     <Box sx={{ display: 'flex', mb: { md: '78px', sm: '32px' } }}>
       <CssBaseline />
@@ -48,3 +48,5 @@ export const Header: FC = () => {
     </Box>
   )
 }
+
+export default Header

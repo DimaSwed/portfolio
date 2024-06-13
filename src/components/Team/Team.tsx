@@ -3,7 +3,7 @@ import { Box, Container } from '@mui/material'
 import { TeamCardList } from './TeamCardList'
 import { TeamTitle } from './TeamTitle'
 
-export const Team: FC = () => {
+const Team: FC = () => {
   return (
     <Box
       sx={{
@@ -25,3 +25,5 @@ export const Team: FC = () => {
     </Box>
   )
 }
+
+export default Team

@@ -27,6 +27,7 @@ export const TeamCardList: FC = () => {
                 alt={item.name}
                 width={373}
                 height={376}
+                loading="lazy"
                 style={{
                   width: '100%',
                   height: 'auto',

@@ -3,7 +3,7 @@ import { Box, Container, Link } from '@mui/material'
 import { PricesCardList } from './PricesCardList'
 import { PriceTitle } from './PriceTitle'
 
-export const Prices: FC = () => {
+const Prices: FC = () => {
   return (
     <Link id="prices">
       <Box
@@ -28,3 +28,4 @@ export const Prices: FC = () => {
     </Link>
   )
 }
+export default Prices

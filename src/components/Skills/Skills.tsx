@@ -5,7 +5,7 @@ import { SkillsTitle } from './SkillsTitle'
 import { SkillsAnimateBox } from './SkillsAnimateBox'
 import { SkillsPictures } from './SkillsPictures'
 
-export const Skills: FC = () => {
+const Skills: FC = () => {
   return (
     <Box sx={{ mb: { lg: '150px', md: '136px', sm: '100px', xs: '100px' } }}>
       <Container maxWidth="lg">
@@ -80,3 +80,5 @@ export const Skills: FC = () => {
     </Box>
   )
 }
+
+export default Skills

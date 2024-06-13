@@ -2,10 +2,10 @@ import React, { FC } from 'react'
 import { Box, Container, Divider, Link } from '@mui/material'
 import { FooterInfo } from './FooterInfo'
 import { FooterTitle } from './FooterTitle'
-import { ContactForm } from '../ConatctForm'
-import { CommentsCommon } from '../CommentsForm/Comment'
+import ContactForm from '../ConatctForm/ContactForm'
+import CommentsCommon from '../CommentsForm/Comment'
 
-export const Footer: FC = () => {
+const Footer: FC = () => {
   return (
     <Box component="footer">
       <Container maxWidth="lg">
@@ -22,3 +22,5 @@ export const Footer: FC = () => {
     </Box>
   )
 }
+
+export default Footer

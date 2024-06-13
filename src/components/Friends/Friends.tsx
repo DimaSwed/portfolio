@@ -5,7 +5,7 @@ import { VectorSvg } from './VectorSvg'
 import { FriendsTitle } from './FriendsTitle'
 import { FotosWithFriends } from './FotosWithFriends'
 
-export const Friends: FC = () => {
+const Friends: FC = () => {
   return (
     <Box sx={{ mb: { lg: '150px', md: '136px', sm: '100px', xs: '100px' } }}>
       <Container maxWidth="lg">
@@ -71,3 +71,5 @@ export const Friends: FC = () => {
     </Box>
   )
 }
+
+export default Friends

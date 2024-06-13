@@ -4,7 +4,7 @@ import { HelloAnimateBox } from './HelloAnimateBox'
 import { Profession } from './Profession'
 import { MyNameHeading } from './MyNameHeading'
 
-export const About: FC = () => {
+const About: FC = () => {
   return (
     <Box
       sx={{
@@ -57,3 +57,5 @@ export const About: FC = () => {
     </Box>
   )
 }
+
+export default About

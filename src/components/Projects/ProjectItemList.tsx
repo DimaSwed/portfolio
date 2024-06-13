@@ -16,6 +16,7 @@ export const ProjectItemList: FC = () => {
               alt={item.name}
               width={350}
               height={400}
+              loading="lazy"
               style={{
                 width: '100%',
                 height: 'auto',
