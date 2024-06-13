@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "update": "npm-check-updates",
-    "postbuild": "prisma generate"
+    "postinstall": "prisma generate",
+    "vercel-build": "prisma generate && next build"
   },
   "dependencies": {
     "@emotion/cache": "^11.11.0",
