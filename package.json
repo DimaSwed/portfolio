@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "update": "npm-check-updates"
+    "update": "npm-check-updates",
+    "postbuild": "prisma generate"
   },
   "dependencies": {
     "@emotion/cache": "^11.11.0",
