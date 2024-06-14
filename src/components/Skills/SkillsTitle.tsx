@@ -29,7 +29,7 @@ export const SkillsTitle: FC = () => {
         Clean code
       </Typography>
       <Typography
-        component="p"
+        paragraph
         sx={{
           fontSize: '17px',
           fontFamily: 'Open Sans, sans-serif',

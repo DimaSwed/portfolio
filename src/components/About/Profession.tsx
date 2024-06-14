@@ -51,6 +51,7 @@ export const Profession: FC = () => {
       <Box>
         <Typography
           variant="h2"
+          paragraph
           sx={{
             color: theme.palette.secondary.main,
             width: '13.5ch',

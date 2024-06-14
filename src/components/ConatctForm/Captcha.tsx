@@ -1,7 +1,6 @@
 // components/Captcha.tsx
 import React, { FC } from 'react'
 import { Grid } from '@mui/material'
-/* eslint-disable-next-line import/no-named-as-default */
 import ReCAPTCHA from 'react-google-recaptcha'
 
 interface CaptchaProps {
