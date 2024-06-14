@@ -1,4 +1,5 @@
 'use client'
+
 import React, { FC } from 'react'
 import { Box, useMediaQuery, useTheme } from '@mui/material'
 import { AdvantageCard } from './AdvantageCard'
