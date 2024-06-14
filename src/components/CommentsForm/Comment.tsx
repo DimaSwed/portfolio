@@ -11,7 +11,10 @@ const CommentsCommon: FC = async () => {
   })
 
   return (
-    <Box sx={{ marginBottom: { lg: '48px', md: '44px', sm: '45px', xs: '40px' } }}>
+    <Box
+      component={'section'}
+      sx={{ marginBottom: { lg: '48px', md: '44px', sm: '45px', xs: '40px' } }}
+    >
       <Container maxWidth="lg">
         <CommentTitle />
         <CommentList comments={comments} />

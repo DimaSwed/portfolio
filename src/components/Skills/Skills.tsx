@@ -7,7 +7,7 @@ import { SkillsPictures } from './SkillsPictures'
 
 const Skills: FC = () => {
   return (
-    <Box sx={{ mb: { lg: '150px', md: '136px', sm: '100px', xs: '100px' } }}>
+    <Box component={'section'} sx={{ mb: { lg: '150px', md: '136px', sm: '100px', xs: '100px' } }}>
       <Container maxWidth="lg">
         <Box
           sx={{

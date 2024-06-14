@@ -7,6 +7,7 @@ import { MyNameHeading } from './MyNameHeading'
 const About: FC = () => {
   return (
     <Box
+      component={'section'}
       sx={{
         marginBottom: { lg: '150px', md: '136px', sm: '100px', xs: '100px' }
       }}

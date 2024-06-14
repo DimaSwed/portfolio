@@ -7,6 +7,7 @@ const Prices: FC = () => {
   return (
     <Link id="prices">
       <Box
+        component={'section'}
         sx={{
           marginBottom: { lg: '150px', md: '136px', sm: '100px', xs: '100px' }
         }}

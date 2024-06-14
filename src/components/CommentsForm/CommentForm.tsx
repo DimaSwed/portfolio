@@ -1,6 +1,16 @@
 'use client'
 import React, { FC, useState } from 'react'
-import { Box, Button, TextField } from '@mui/material'
+import {
+  Box,
+  Button,
+  Fade,
+  TextField,
+  Tooltip,
+  Snackbar,
+  Alert,
+  Backdrop,
+  CircularProgress
+} from '@mui/material'
 import { addComment } from '@/actions/formAction'
 import { useFormik, FormikHelpers } from 'formik'
 import * as yup from 'yup'
@@ -32,6 +42,9 @@ const validationSchema = yup.object({
 
 export const CommentForm: FC = () => {
   const [hasSubmitted, setHasSubmitted] = useState(false)
+  const [openSnackbar, setOpenSnackbar] = useState(false)
+  const [snackbarMessage, setSnackbarMessage] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const formik = useFormik<FormValues>({
     initialValues: {
@@ -41,16 +54,29 @@ export const CommentForm: FC = () => {
     },
     validationSchema: validationSchema,
     onSubmit: async (values, { resetForm }: FormikHelpers<FormValues>) => {
-      const formData = new FormData()
-      formData.append('title', values.title)
-      formData.append('content', values.content)
-      formData.append('initials', values.initials)
+      try {
+        setIsSubmitting(true)
+        const formData = new FormData()
+        formData.append('title', values.title)
+        formData.append('content', values.content)
+        formData.append('initials', values.initials)
 
-      await addComment(formData)
+        await addComment(formData)
 
-      // Очищаем форму после отправки комментария
-      resetForm()
-      setHasSubmitted(false)
+        // Очищаем форму после отправки комментария
+        resetForm()
+        setHasSubmitted(false)
+
+        // Показать Snackbar при успешной отправке
+        setSnackbarMessage('Comment posted successfully!')
+        setOpenSnackbar(true)
+      } catch (error) {
+        // Показать Snackbar при ошибке
+        setSnackbarMessage('Failed to post comment. Please try again.')
+        setOpenSnackbar(true)
+      } finally {
+        setIsSubmitting(false)
+      }
     }
   })
 
@@ -58,6 +84,13 @@ export const CommentForm: FC = () => {
     e.preventDefault()
     setHasSubmitted(true)
     formik.handleSubmit(e)
+  }
+
+  const handleCloseSnackbar = (event?: React.SyntheticEvent | Event, reason?: string) => {
+    if (reason === 'clickaway') {
+      return
+    }
+    setOpenSnackbar(false)
   }
 
   return (
@@ -112,26 +145,38 @@ export const CommentForm: FC = () => {
         helperText={hasSubmitted && formik.touched.initials && formik.errors.initials}
         sx={{ maxWidth: 580, width: '100%', mb: '30px' }}
       />
-      <Button
-        type="submit"
-        variant="contained"
-        color="secondary"
-        sx={{
-          color: 'white',
-          fontSize: '20px',
-          fontWeight: 700,
-          fontFamily: 'Manrope, sans-serif'
-        }}
-      >
-        Post Comment
-      </Button>
+      <Tooltip TransitionComponent={Fade} TransitionProps={{ timeout: 600 }} title="Send comment">
+        <Button
+          type="submit"
+          variant="contained"
+          color="secondary"
+          sx={{
+            color: 'white',
+            fontSize: '20px',
+            fontWeight: 700,
+            fontFamily: 'Manrope, sans-serif'
+          }}
+        >
+          Post Comment
+        </Button>
+      </Tooltip>
+
+      <Snackbar open={openSnackbar} autoHideDuration={5000} onClose={handleCloseSnackbar}>
+        <Alert onClose={handleCloseSnackbar} severity="success" sx={{ width: '100%' }}>
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
+
+      <Backdrop sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }} open={isSubmitting}>
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </Box>
   )
 }
 
 // 'use client'
-// import React, { FC } from 'react'
-// import { Box, Button, TextField } from '@mui/material'
+// import React, { FC, useState } from 'react'
+// import { Box, Button, Fade, TextField, Tooltip } from '@mui/material'
 // import { addComment } from '@/actions/formAction'
 // import { useFormik, FormikHelpers } from 'formik'
 // import * as yup from 'yup'
@@ -162,14 +207,16 @@ export const CommentForm: FC = () => {
 // })
 
 // export const CommentForm: FC = () => {
-//   const formik = useFormik({
+//   const [hasSubmitted, setHasSubmitted] = useState(false)
+
+//   const formik = useFormik<FormValues>({
 //     initialValues: {
 //       title: '',
 //       content: '',
 //       initials: ''
 //     },
 //     validationSchema: validationSchema,
-//     onSubmit: async (values: FormValues, { resetForm }: FormikHelpers<FormValues>) => {
+//     onSubmit: async (values, { resetForm }: FormikHelpers<FormValues>) => {
 //       const formData = new FormData()
 //       formData.append('title', values.title)
 //       formData.append('content', values.content)
@@ -179,15 +226,22 @@ export const CommentForm: FC = () => {
 
 //       // Очищаем форму после отправки комментария
 //       resetForm()
+//       setHasSubmitted(false)
 //     }
 //   })
+
+//   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+//     e.preventDefault()
+//     setHasSubmitted(true)
+//     formik.handleSubmit(e)
+//   }
 
 //   return (
 //     <Box
 //       component="form"
 //       noValidate
 //       autoComplete="off"
-//       onSubmit={formik.handleSubmit}
+//       onSubmit={handleSubmit}
 //       sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
 //     >
 //       <TextField
@@ -200,8 +254,8 @@ export const CommentForm: FC = () => {
 //         value={formik.values.title}
 //         onChange={formik.handleChange}
 //         onBlur={formik.handleBlur}
-//         error={formik.touched.title && Boolean(formik.errors.title)}
-//         helperText={formik.touched.title && formik.errors.title}
+//         error={hasSubmitted && formik.touched.title && Boolean(formik.errors.title)}
+//         helperText={hasSubmitted && formik.touched.title && formik.errors.title}
 //         sx={{ maxWidth: 580, width: '100%', mb: '20px' }}
 //       />
 //       <TextField
@@ -216,8 +270,8 @@ export const CommentForm: FC = () => {
 //         value={formik.values.content}
 //         onChange={formik.handleChange}
 //         onBlur={formik.handleBlur}
-//         error={formik.touched.content && Boolean(formik.errors.content)}
-//         helperText={formik.touched.content && formik.errors.content}
+//         error={hasSubmitted && formik.touched.content && Boolean(formik.errors.content)}
+//         helperText={hasSubmitted && formik.touched.content && formik.errors.content}
 //         sx={{ maxWidth: 580, width: '100%', mb: '20px' }}
 //       />
 //       <TextField
@@ -230,23 +284,25 @@ export const CommentForm: FC = () => {
 //         value={formik.values.initials}
 //         onChange={formik.handleChange}
 //         onBlur={formik.handleBlur}
-//         error={formik.touched.initials && Boolean(formik.errors.initials)}
-//         helperText={formik.touched.initials && formik.errors.initials}
+//         error={hasSubmitted && formik.touched.initials && Boolean(formik.errors.initials)}
+//         helperText={hasSubmitted && formik.touched.initials && formik.errors.initials}
 //         sx={{ maxWidth: 580, width: '100%', mb: '30px' }}
 //       />
-//       <Button
-//         type="submit"
-//         variant="contained"
-//         color="secondary"
-//         sx={{
-//           color: 'white',
-//           fontSize: '20px',
-//           fontWeight: 700,
-//           fontFamily: 'Manrope, sans-serif'
-//         }}
-//       >
-//         Post Comment
-//       </Button>
+//       <Tooltip TransitionComponent={Fade} TransitionProps={{ timeout: 600 }} title="Send comment">
+//         <Button
+//           type="submit"
+//           variant="contained"
+//           color="secondary"
+//           sx={{
+//             color: 'white',
+//             fontSize: '20px',
+//             fontWeight: 700,
+//             fontFamily: 'Manrope, sans-serif'
+//           }}
+//         >
+//           Post Comment
+//         </Button>
+//       </Tooltip>
 //     </Box>
 //   )
 // }

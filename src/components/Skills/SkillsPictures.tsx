@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
+import { Tooltip } from '@mui/material'
 
 export const SkillsPictures: FC = () => {
   return (
@@ -20,19 +21,23 @@ export const SkillsPictures: FC = () => {
             alignItems: 'center'
           }}
         >
-          <Image
-            src={img.link}
-            alt={img.name}
-            width={380}
-            height={482}
-            loading="lazy"
-            style={{
-              width: '100%',
-              height: 'auto',
-              maxWidth: '380px',
-              objectFit: 'contain'
-            }}
-          />
+          <Tooltip title={img.name} placement="top">
+            <div style={{ position: 'relative' }}>
+              <Image
+                src={img.link}
+                alt={img.name}
+                width={380}
+                height={482}
+                loading="lazy"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  maxWidth: '380px',
+                  objectFit: 'contain'
+                }}
+              />
+            </div>
+          </Tooltip>
         </SwiperSlide>
       ))}
     </Swiper>

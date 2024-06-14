@@ -13,7 +13,7 @@ import { HeaderTitle } from './HeaderTitle'
 
 const Header: FC = () => {
   return (
-    <Box sx={{ display: 'flex', mb: { md: '78px', sm: '32px' } }}>
+    <Box component={'header'} sx={{ display: 'flex', mb: { md: '78px', sm: '32px' } }}>
       <CssBaseline />
       <AppBar component="nav" sx={{ backgroundColor: 'primary.main', backgroundImage: 'none' }}>
         <Container maxWidth="lg">

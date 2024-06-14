@@ -7,6 +7,7 @@ const Projects: FC = () => {
   return (
     <Link id="cases">
       <Box
+        component={'section'}
         sx={{
           marginBottom: { lg: '150px', md: '136px', sm: '100px', xs: '100px' }
         }}
